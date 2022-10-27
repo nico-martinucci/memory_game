@@ -1,0 +1,67 @@
+body {
+  background-color: lightgray;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 200;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  color: rgb(9, 122, 122);
+}
+
+label[for="board-size"] {
+  font-size: 24px;
+}
+
+button {
+  font-family: 'Kanit', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+input[name="board-size"] {
+  width: 60px;
+  font-family: 'Kanit', sans-serif;
+}
+
+#game {
+  width: 1200px;
+  display: none;
+  margin: auto;
+}
+
+#game div {
+  border: 1px solid black;
+  width: 120px;
+  height: 120px;
+  margin: 8px;
+  display: inline-block;
+  border-radius: 8px;
+  transition: 0.1s;
+}
+
+#game div[match="false"]:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#game div[match="true"] {
+  box-shadow: 
+    rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, 
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+  
+#end-game {
+  display: none;
+}
+
+#high-scores {
+  font-size: 24px;
+}
+
+#stats {
+  display: none;
+  font-size: 24px;
+}
