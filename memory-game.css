@@ -22,8 +22,15 @@ button {
   font-weight: 400;
 }
 
+#how-to {
+  display: block;
+  margin: auto;
+}
+
 input[name="board-size"] {
-  width: 60px;
+  width: 50px;
+  font-size: 24px;
+  text-align: center;
   font-family: 'Kanit', sans-serif;
 }
 
@@ -53,6 +60,11 @@ input[name="board-size"] {
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
   
+#reset-button {
+  display: none;
+  margin: auto;
+}
+
 #end-game {
   display: none;
 }

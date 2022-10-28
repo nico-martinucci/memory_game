@@ -11,13 +11,6 @@
 <body>
 
 <h1>Memory Game!</h1>
-
-<label for="board-size">Board size (even number 2-40):
-  <input type="text" name="board-size">
-</label>
-<p></p>
-<button id="start-button">Start Game!</button>
-
 <div id="game"></div>
 
 <div id="stats">
@@ -25,9 +18,18 @@
   <span id="timer">Time elapsed: 0</span>
 </div>
 
+<label for="board-size">Board size (even number 2-40):
+  <input type="text" name="board-size">
+</label>
+<p></p>
+<button id="start-button">Start Game!</button>
+<button id="reset-button">Start New Game!</button>
+<p></p>
+<button id="how-to">How to Play</button>
+
+
 <div id="end-game">
   <h2>You win!</h2>
-  <button id="reset-button">Reset Board</button>
   <h3>High Scores:</h3>
   <div id="high-scores"></div>
 </div>

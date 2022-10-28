@@ -2,6 +2,20 @@
 
 /** Memory game: find matching pairs of cards and flip both of them. */
 
+let howToButton = document.querySelector("#how-to");
+
+howToButton.addEventListener("click", event => {
+  event.preventDefault();
+  alert(`
+    1. Enter an even-numbered board size from 2-40
+    2. Click the button to start a new game
+    3. Click on the cards to reveal their colors - only two cards can be 
+    face up at a time, and if they are a match they will remain face up
+    4. If two face up cards are not a match, they will turn back over after
+    1 second
+    5. Try to get a high score!`)
+})
+
 const FOUND_MATCH_WAIT_MSECS = 1000;
 const COLOR_OPTIONS = [
   "red",
@@ -229,13 +243,14 @@ let timer = document.querySelector("#timer");
 resetButton.addEventListener("click", (event) => {
   event.preventDefault();
   if (checkBoardSizeInput()) {
-      // internal reset
+    // internal reset
     matchedCards = 0;
     guesses = 0;
     timeElapsed = 0;
 
     // display reset
     gameBoard.innerHTML = "";
+    // resetButton.style.display = "none";
     endGame.style.display = "none";
     timer.textContent = "Time elapsed: 0";
     let cards = document.querySelectorAll("#game div");
@@ -243,6 +258,7 @@ resetButton.addEventListener("click", (event) => {
       card.style.backgroundColor = "";
     }
     updateScore();
+    clearInterval(gameTimer);
     gameTimer = startGameTimer();
 
     // create new board
@@ -256,6 +272,7 @@ function startGame() {
   let stats = document.querySelector("#stats");
   gameBoard.style.display = "block";
   stats.style.display = "block";
+  resetButton.style.display = "block";
   startButton.style.display = "none";
   gameTimer = startGameTimer();
 }
@@ -295,6 +312,7 @@ function checkWinCondition() {
     }
     recordScore();
     updateDisplayScores();
+    resetButton.style.display = "block";
     endGame.style.display = "block";
     clearInterval(gameTimer);
   }
